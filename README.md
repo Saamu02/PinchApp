@@ -1,2 +1,2 @@
 # PinchApp
-App 2: App made with SwiftUI for iOS. (In-progress)
+App 3: App made with SwiftUI for iOS. (In-progress)
