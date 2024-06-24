@@ -14,7 +14,8 @@ struct ContentView: View {
     @State private var isAnimating = false
     @State private var imageScale: CGFloat = 1.0
     @State private var imageOffset = CGSize.zero
-    
+    @State private var isDrawerOpen  = false
+
     private var maxScale: CGFloat = 5
     private var minScale: CGFloat = 1
     
@@ -193,6 +194,37 @@ struct ContentView: View {
                     .opacity(isAnimating ? 1 : 0)
                 }
                 .padding(.bottom, 30)
+            }
+            // MARK: - DRAWER
+            .overlay(alignment: .topTrailing) {
+                
+                HStack(spacing: 12) {
+                    
+                    // MARK: - DRAWER HANDLE
+                    Image(systemName: isDrawerOpen ? "chevron.compact.right" : "chevron.compact.left")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 40)
+                        .padding(8)
+                        .foregroundStyle(.secondary)
+                        .onTapGesture {
+                            
+                            withAnimation(.easeOut) {
+                                isDrawerOpen.toggle()
+                            }
+                        }
+                    
+                    // MARK: - THUMBNAILS
+                    Spacer()
+                }
+                .padding(.vertical, 16)
+                .padding(.horizontal, 8)
+                .background(.ultraThinMaterial)
+                .clipShape(.rect(cornerRadii: RectangleCornerRadii(topLeading: 12, bottomLeading: 12, bottomTrailing: 12, topTrailing: 12 )))
+                .opacity(isAnimating ? 1 : 0)
+                .frame(width: 260)
+                .padding(.top, (UIScreen.current?.bounds.height)! / 12)
+                .offset(x: isDrawerOpen ? 20 : 215)
             }
             
         } //: NAVIGATION STACK

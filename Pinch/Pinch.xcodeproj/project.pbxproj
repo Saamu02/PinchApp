@@ -14,6 +14,8 @@
 		045053BB2C26D5EA0017B005 /* ImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045053BA2C26D5EA0017B005 /* ImageConstants.swift */; };
 		04E6FB082C28E99000EF41CC /* InfoPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FB072C28E99000EF41CC /* InfoPanelView.swift */; };
 		04E6FB0A2C28F51900EF41CC /* ControlImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FB092C28F51900EF41CC /* ControlImageView.swift */; };
+		04E6FB0E2C29016C00EF41CC /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FB0C2C29016C00EF41CC /* UIWindow+Extension.swift */; };
+		04E6FB0F2C29016C00EF41CC /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FB0D2C29016C00EF41CC /* UIScreen+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		045053BA2C26D5EA0017B005 /* ImageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConstants.swift; sourceTree = "<group>"; };
 		04E6FB072C28E99000EF41CC /* InfoPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPanelView.swift; sourceTree = "<group>"; };
 		04E6FB092C28F51900EF41CC /* ControlImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlImageView.swift; sourceTree = "<group>"; };
+		04E6FB0C2C29016C00EF41CC /* UIWindow+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
+		04E6FB0D2C29016C00EF41CC /* UIScreen+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,7 @@
 		0443EBD32C26CCFD00FD030F /* Pinch */ = {
 			isa = PBXGroup;
 			children = (
+				04E6FB0B2C29014F00EF41CC /* Extension */,
 				045053B92C26D5C50017B005 /* Utilities */,
 				045053B82C26D0DF0017B005 /* Data */,
 				045053B72C26D0D20017B005 /* Model */,
@@ -114,6 +119,15 @@
 				045053BA2C26D5EA0017B005 /* ImageConstants.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		04E6FB0B2C29014F00EF41CC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				04E6FB0D2C29016C00EF41CC /* UIScreen+Extension.swift */,
+				04E6FB0C2C29016C00EF41CC /* UIWindow+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +205,8 @@
 				04E6FB0A2C28F51900EF41CC /* ControlImageView.swift in Sources */,
 				045053BB2C26D5EA0017B005 /* ImageConstants.swift in Sources */,
 				0443EBD52C26CCFD00FD030F /* PinchApp.swift in Sources */,
+				04E6FB0E2C29016C00EF41CC /* UIWindow+Extension.swift in Sources */,
+				04E6FB0F2C29016C00EF41CC /* UIScreen+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
