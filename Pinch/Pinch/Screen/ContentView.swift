@@ -15,9 +15,12 @@ struct ContentView: View {
     @State private var imageScale: CGFloat = 1.0
     @State private var imageOffset = CGSize.zero
     @State private var isDrawerOpen  = false
+    @State private var pageIndex = 0
 
     private var maxScale: CGFloat = 5
     private var minScale: CGFloat = 1
+    
+    let pages = pagesData
     
     // MARK: - FUNCTIONS
     
@@ -40,7 +43,7 @@ struct ContentView: View {
                 Color.clear
                 
                 // MARK: - PAGE IMAGE
-                Image(ImageConstants.magzineFrontCover)
+                Image(pages[pageIndex].imageName)
                     .resizable()
                     .scaledToFit()
                     .clipShape(.rect(cornerRadii: RectangleCornerRadii(topLeading: 10, bottomLeading: 10, bottomTrailing: 10, topTrailing: 10)))
@@ -215,6 +218,22 @@ struct ContentView: View {
                         }
                     
                     // MARK: - THUMBNAILS
+                    
+                    ForEach(pages) { page in
+                        Image(page.thumbnailName)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 80)
+                            .clipShape(.rect(cornerRadii: RectangleCornerRadii(topLeading: 8, bottomLeading: 8, bottomTrailing: 8, topTrailing: 8)))
+                            .shadow(radius: 4)
+                            .opacity(isDrawerOpen ? 1 : 0)
+                            .animation(.easeOut(duration: 0.5), value: isDrawerOpen)
+                            .onTapGesture {
+                                isAnimating = true
+                                pageIndex = page.id - 1
+                            }
+                    }
+                    
                     Spacer()
                 }
                 .padding(.vertical, 16)
