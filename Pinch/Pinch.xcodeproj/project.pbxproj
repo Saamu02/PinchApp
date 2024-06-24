@@ -13,6 +13,7 @@
 		0443EBDC2C26CCFE00FD030F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0443EBDB2C26CCFE00FD030F /* Preview Assets.xcassets */; };
 		045053BB2C26D5EA0017B005 /* ImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045053BA2C26D5EA0017B005 /* ImageConstants.swift */; };
 		04E6FB082C28E99000EF41CC /* InfoPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FB072C28E99000EF41CC /* InfoPanelView.swift */; };
+		04E6FB0A2C28F51900EF41CC /* ControlImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6FB092C28F51900EF41CC /* ControlImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		0443EBDB2C26CCFE00FD030F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		045053BA2C26D5EA0017B005 /* ImageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConstants.swift; sourceTree = "<group>"; };
 		04E6FB072C28E99000EF41CC /* InfoPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPanelView.swift; sourceTree = "<group>"; };
+		04E6FB092C28F51900EF41CC /* ControlImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				04E6FB072C28E99000EF41CC /* InfoPanelView.swift */,
+				04E6FB092C28F51900EF41CC /* ControlImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			files = (
 				0443EBD72C26CCFD00FD030F /* ContentView.swift in Sources */,
 				04E6FB082C28E99000EF41CC /* InfoPanelView.swift in Sources */,
+				04E6FB0A2C28F51900EF41CC /* ControlImageView.swift in Sources */,
 				045053BB2C26D5EA0017B005 /* ImageConstants.swift in Sources */,
 				0443EBD52C26CCFD00FD030F /* PinchApp.swift in Sources */,
 			);

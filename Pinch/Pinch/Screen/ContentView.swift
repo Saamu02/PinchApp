@@ -15,12 +15,15 @@ struct ContentView: View {
     @State private var imageScale: CGFloat = 1.0
     @State private var imageOffset = CGSize.zero
     
+    private var maxScale: CGFloat = 5
+    private var minScale: CGFloat = 1
+    
     // MARK: - FUNCTIONS
     
     func resetImageState() {
         
         return withAnimation(.spring) {
-            imageScale = 1
+            imageScale = minScale
             imageOffset = .zero
         }
     }
@@ -49,10 +52,10 @@ struct ContentView: View {
                 // MARK: - 1. TAP GESTURE
                     .onTapGesture(count: 2, perform: {
                         
-                        if imageScale == 1 {
+                        if imageScale == minScale {
                             
                             withAnimation(.spring) {
-                                imageScale = 5
+                                imageScale = maxScale
                             }
                             
                         } else {
@@ -71,7 +74,7 @@ struct ContentView: View {
                             }
                             .onEnded { _ in
                                 
-                                if imageScale <= 1 {
+                                if imageScale <= minScale {
                                     resetImageState()
                                 }
                             }
@@ -91,6 +94,74 @@ struct ContentView: View {
                 InfoPanelView(scale: imageScale, offset: imageOffset)
                     .padding(.horizontal)
                     .padding(.top, 30)
+            }
+            // MARK: - CONTROLS
+            .overlay(alignment: .bottom) {
+                
+                Group {
+                    
+                    HStack {
+                        
+                        // SCALE DOWN
+                        Button(action: {
+                            
+                            withAnimation(.spring) {
+                                
+                                if imageScale > minScale {
+                                    imageScale -= 1
+                                    
+                                    if imageScale <= 1 {
+                                        resetImageState()
+                                    }
+                                }
+                            }
+                            
+                        }) {
+                            ControlImageView(systemImage: "minus.magnifyingglass")
+                        }
+                        
+                        // RESET
+                        Button(action: {
+                            
+                            withAnimation(.spring) {
+                                
+                                if imageScale > minScale {
+                                    resetImageState()
+                                    
+                                } else {
+                                    imageScale = maxScale
+                                }
+                            }
+                            
+                        }) {
+                            ControlImageView(systemImage: "arrow.up.left.and.down.right.magnifyingglass")
+                        }
+                        
+                        // SCALE UP
+                        Button(action: {
+                            
+                            withAnimation(.spring) {
+                                
+                                if imageScale < maxScale {
+                                    imageScale += 1
+                                    
+                                    if imageScale > maxScale {
+                                        imageScale = maxScale
+                                    }
+                                }
+                            }
+                            
+                        }) {
+                            ControlImageView(systemImage: "plus.magnifyingglass")
+                        }
+                    }
+                    .padding(.vertical, 12)
+                    .padding(.horizontal, 20)
+                    .background(.ultraThinMaterial)
+                    .clipShape(.rect(cornerRadii: RectangleCornerRadii(topLeading: 12, bottomLeading: 12, bottomTrailing: 12, topTrailing: 12)))
+                    .opacity(isAnimating ? 1 : 0)
+                }
+                .padding(.bottom, 30)
             }
             
         } //: NAVIGATION STACK
