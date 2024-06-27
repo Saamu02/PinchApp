@@ -32,6 +32,9 @@ This app is mostly learning about gestures.
 https://github.com/Saamu02/PinchApp/assets/126147404/8c7d3ab6-c88d-428b-b088-b02ff97b6bbc
 
 
+## 
+## 
+
 Note: I am following the tutorials SwiftUI + SwiftData Masterclass - iOS App Development Swift by Robert Petras.
 
 Reference Link: https://www.udemy.com/course/swiftui-masterclass-course-ios-development-with-swift/
