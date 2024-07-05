@@ -4,7 +4,7 @@ App 3: App made with SwiftUI for iOS.
 
 This app is mostly learning about gestures.
 
-# Learning Points:
+# Important Points:
 - Double tap gesture
 - Drag gesture
 - Magnify gesture
